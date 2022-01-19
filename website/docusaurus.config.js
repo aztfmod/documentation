@@ -7,13 +7,13 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: 'Cloud Adoption Framework for Terraform Landingzones',
-  tagline: 'Dinosaurs are cool',
+  tagline: 'everything as code. opiniated.',
   url: 'https://your-docusaurus-test-site.com',
   baseUrl: '/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
-  organizationName: 'Microsoft', // Usually your GitHub org/user name.
+  organizationName: 'aztfmod', // Usually your GitHub org/user name.
   projectName: 'aztfmod', // Usually your repo name.
 
   presets: [
@@ -24,13 +24,12 @@ const config = {
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
           // Please change this to your repo.
-          editUrl: 'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+          editUrl: 'https://github.com/aztfmod/documentation/tree/main/website/',
         },
         blog: {
           showReadingTime: true,
           // Please change this to your repo.
-          editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+          editUrl: 'https://github.com/aztfmod/documentation/tree/main/website/',
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
@@ -43,9 +42,9 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       navbar: {
-        title: 'My Site',
+        title: 'Cloud Adoption Framework',
         logo: {
-          alt: 'My Site Logo',
+          alt: 'Cloud Adoption Framework for Terraform Landingzones.',
           src: 'img/logo.svg',
         },
         items: [
@@ -55,9 +54,15 @@ const config = {
             position: 'left',
             label: 'Tutorial',
           },
+          {
+            type: 'doc',
+            docId: 'rover/rover-intro',
+            position: 'left',
+            label: 'Rover',
+          },
           {to: '/blog', label: 'Blog', position: 'left'},
           {
-            href: 'https://github.com/facebook/docusaurus',
+            href: 'https://github.com/aztfmod/documentation',
             label: 'GitHub',
             position: 'right',
           },
@@ -79,16 +84,8 @@ const config = {
             title: 'Community',
             items: [
               {
-                label: 'Stack Overflow',
-                href: 'https://stackoverflow.com/questions/tagged/docusaurus',
-              },
-              {
-                label: 'Discord',
-                href: 'https://discordapp.com/invite/docusaurus',
-              },
-              {
-                label: 'Twitter',
-                href: 'https://twitter.com/docusaurus',
+                label: 'Gitter',
+                href: 'https://gitter.im/aztfmod/community',
               },
             ],
           },
@@ -101,12 +98,12 @@ const config = {
               },
               {
                 label: 'GitHub',
-                href: 'https://github.com/facebook/docusaurus',
+                href: 'https://github.com/azure/caf-terraform-landingzones',
               },
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
+        copyright: `Copyright © ${new Date().getFullYear()} Cloud Adoption Framework for Terraform Landingzones.`,
       },
       prism: {
         theme: lightCodeTheme,
