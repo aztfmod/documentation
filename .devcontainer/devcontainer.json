@@ -28,7 +28,7 @@
     // "shutdownAction": "none",
 
     // Uncomment the next line to run commands after the container is created.
-    "postStartCommand": "chmod 666 /var/run/docker.sock && cp -R /tmp/.ssh-localhost/* ~/.ssh && chown -R $(whoami):$(whoami) ~ && chmod 400 ~/.ssh/* && apt update && apt install -y vim && git config --global core.editor vim",
+    "postStartCommand": "chmod 666 /var/run/docker.sock && cp -R /tmp/.ssh-localhost/* ~/.ssh && chown -R $(whoami):$(whoami) ~ && chmod 400 ~/.ssh/* && apt update && apt install -y vim && git config --global core.editor vim && cd /tf/caf/website && yarn && yarn serve",
     // Add the IDs of extensions you want installed when the container is created in the array below.
     "extensions": [
         // "4ops.terraform",
