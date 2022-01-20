@@ -8,7 +8,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 const config = {
   title: 'Cloud Adoption Framework for Terraform Landingzones',
   tagline: 'everything as code. opiniated.',
-  url: 'https://your-docusaurus-test-site.com',
+  url: 'https://aztfmod.github.io',
   baseUrl: '/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
@@ -106,7 +106,7 @@ const config = {
         copyright: `Copyright © ${new Date().getFullYear()} Cloud Adoption Framework for Terraform Landingzones.`,
       },
       prism: {
-        theme: lightCodeTheme,
+        theme: darkCodeTheme,
         darkTheme: darkCodeTheme,
       },
     }),

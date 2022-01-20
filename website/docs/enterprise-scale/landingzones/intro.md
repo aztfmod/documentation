@@ -19,7 +19,7 @@ Based on your configuration you can select the following deployment guide:
 
 |Microsoft Billing Account | Scenario | Link|
 |--------------------------|----------|-----|
-| Enterprise Agreement | Deploy on existing Azure subscriptions | [Getting started](./multi-subscription/org-setup.mdx)
+| Enterprise Agreement | Deploy on existing Azure subscriptions | [Getting started](./platform/org-setup.mdx)
 
 ## Introducing the CAF Terraform framework
 

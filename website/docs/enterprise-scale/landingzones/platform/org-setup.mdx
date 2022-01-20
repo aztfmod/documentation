@@ -4,7 +4,7 @@ sidebar_position: 1
 ---
 import ReactPlayer from 'react-player'
 
-# Setup the Contoso organization
+# Setup your organization
 
 
 ## Organize your private repository
@@ -19,12 +19,12 @@ The video bellow shows you how to setup a private Gihub repository you are going
 
 Clone the private repository on your local machine
 
-```shell
+```bash
 # Adjust the name of your organization
 github.com % git clone git://github.com/<org>/contoso contoso && cd contoso
 ```
 
-```shell
+```bash
 Cloning into 'contoso'...
 remote: Enumerating objects: 429, done.
 remote: Counting objects: 100% (429/429), done.
@@ -34,12 +34,13 @@ Receiving objects: 100% (429/429), 2.93 MiB | 1.52 MiB/s, done.
 Resolving deltas: 100% (110/110), done.
 ```
 
-```shell
+```bash
 # Open visual studio code from the contoso folder
 contoso % code .
 ```
 
 Trust the repository
+
 ![](vscode-trust-folder.png) 
 
 ### Visual Studio code
@@ -69,14 +70,51 @@ You should now see the following terminal. This terminal is where you will run a
 
 ![](vscode-zsh.png)
 
-> **Note**: The CAF Terraform landingzones framework assumes the landingzones Terraform code is cloned in a repository called landingzones.
-> > Do not change that name.
+### Rename the default branch to main
 
-```zsh
+```bash
+➜  caf git:(starter) git checkout main                  
+Switched to branch 'main'
+➜  caf git:(main)
+```
+
+```bash
+➜  caf git:(main) git push --set-upstream origin main
+
+Enumerating objects: 103, done.
+Counting objects: 100% (103/103), done.
+Delta compression using up to 2 threads
+Compressing objects: 100% (89/89), done.
+Writing objects: 100% (98/98), 53.35 KiB | 420.00 KiB/s, done.
+Total 98 (delta 24), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (24/24), completed with 3 local objects.
+remote: 
+remote: Create a pull request for 'main' on GitHub by visiting:
+remote:      https://github.com/<org>/contoso/pull/new/main
+remote: 
+To github.com:<org>/contoso.git
+ * [new branch]      main -> main
+Branch 'main' set up to track remote branch 'main' from 'origin'.
+
+➜  caf git:(main) 
+
+```
+
+### Clone the CAF Terraform landingzones code
+
+:::note
+The CAF Terraform landingzones framework assumes the landingzones Terraform code is cloned in a repository called landingzones.
+:::
+
+:::caution
+Do not use another name as **landingzones**
+:::
+
+```bash
 ➜  caf git:(starter) ✗ git clone https://github.com/Azure/caf-terraform-landingzones.git landingzones
 ```
 
-```zsh
+```bash
 Cloning into 'landingzones'...
 remote: Enumerating objects: 9067, done.
 remote: Counting objects: 100% (393/393), done.
@@ -87,7 +125,7 @@ Resolving deltas: 100% (5792/5792), done.
 Updating files: 100% (406/406), done.
 ```
 
-```zsh
+```bash
 # Go to the landingzones folder
 ➜  caf git:(starter) ✗ cd landingzones 
 
@@ -102,23 +140,52 @@ Updating files: 100% (406/406), done.
 The CAF Terraform landingzones are released on regular basis. In order to align the deployment instructions, you need to make sure the Terraform code is also using the correct branch or tag.
 
 From the terminal execute
-```zsh
+```bash
 ➜  landingzones git:(master) git checkout 2112.int
 Branch '2112.int' set up to track remote branch '2112.int' from 'origin'.
 Switched to a new branch '2112.int'
 ➜  landingzones git:(2112.int) ✗ 
 ```
 
-> **Note**: The branch name in parentheses has changed from **master** to **2112.int**
+:::note
+The branch name in parentheses has changed from **master** to **2112.int**
+:::
 
-### Setup the orgs folder
+## Setup the orgs folder
+
+The framework uses a folder called **orgs** stored in the devcontainer at the folder **/tf/caf/orgs**.
 
 The orgs folder must be created at the root of your private repository. It can host different configuration of your platform landingzones. 
-For example, you can setup an engineering and production to represent two master configuration where you can first test the configuration and setting in the engineering platform landingzones and then when validated, move that configuration into the production. This is an approach using a mono-repo but some customers would prefer to have different config git repo to separete engineering from production. More on this topics 
+For example, you can setup an engineering and production to represent two master configuration where you can first test the configuration and setting in the engineering platform landingzones and then when validated, move that configuration into the production. This is an approach using a mono-repo but some customers would prefer to have different config git repo to separete engineering from production. More documentation on this topics will come soon. 
 
-### Copy the demo Contoso configuration
+### Copy the Contoso template configuration
 
-From the starter folder:
-- Copy starter/orgs/contoso/multi-subscriptions/platform to orgs/contoso/platform
+```bash
+mkdir -p /tf/caf/orgs/contoso          
+```
+```bash
+cp -R /tf/caf/landingzones/templates/enterprise-scale/contoso/platform \
+      /tf/caf/orgs/contoso/platform
+```
 
-You can explore the content of this folder and get more details on the files and folders .
+You can now see the following folder structure created in you local repository.
+
+![](vscode-orgs-template-folder-structure.png)
+
+You can explore the content of this folder and get more details on the files and folders.
+
+### Customize the templates
+
+To customize the templates and getting starting quick, you can use teh find in folders feature
+
+![](find-replace.png)
+
+Search for the term **<replace\>**
+
+![](replace.png)
+
+You can now select each items and adjust the values accordingly.
+
+
+
+Go to the next page to learn how to customize the default template.
