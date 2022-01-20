@@ -18,7 +18,6 @@
         - volume-caf-vscode:/home/vscode
         - volume-caf-vscode-bashhistory:/commandhistory
         - ~/.ssh:/tmp/.ssh-localhost:ro
-        - /var/run/docker.sock:/var/run/docker.sock
 
       # Overrides default command so things don't shut down after the process ends.
       command: /bin/sh -c "while sleep 1000; do :; done"
