@@ -1,27 +1,30 @@
 ---
-id: level0
+id: elsz-level0
 sidebar_position: 2
 ---
 
 # Ignite the platform
 
-Once you have completed the customization of the default templates to your needs, you will use the rover ignite command that will guide you in the generation of the Terraform configuration files and help you gradually deploying the Azure services in the platform landingzones. This tutorial, is showing you how to deploy using the interactive mode from the visual studio code console. 
+Once you have completed the customization of the default templates to your needs, you will use the rover ignite command that will guide you in the generation of the Terraform configuration files and help you gradually deploying the Azure services in the platform landing zones. This tutorial, is showing you how to deploy using the interactive mode from the visual studio code console.
 
-More scenario will be added in the coming month
+More scenario will be added in the coming months:
+
 - Deployment from pipelines (Github, Jenkins, Azure Devops, Gitlab)
 - Azure subscription creation automation
-- Azure Subscription Vending Machine (ASVM) to generate application landingzones
-- Deployment of a landingzone accelerator in an application landingzone 
+- Azure Subscription Vending Machine (ASVM) to generate application landing zones
+- Deployment of a landingzone accelerator in an application landingzone
 
 ## Privileges
 
 :::note
-To deploy the platform landinzones, you need the following privileges
+To deploy the platform landing zones, you need the following privileges
 
-Azure Active Directory
+Azure Active Directory:
+
 - Global Administrator
 
-Azure subscriptions
+Azure subscriptions:
+
 - Management (owner)
 - Identity (owner)
 - Connectivity (owner)
@@ -117,7 +120,7 @@ clean_up backend_files
 ➜  caf git:(main) ✗ 
 ```
 
-## Triger rover ignite
+## Trigger rover ignite
 
 From now on you will have to follow the readme.md located in your repository (**/tf/caf/orgs/contoso/platform/README.md**) and follow the instructions
 
@@ -176,7 +179,7 @@ changed: [localhost]
 
 
 :::note
-On the first execution of the rover ignite command, you will notice some red errors. It is exepected as nothing has been deployed yet and the rover ignite is trying to find the launchpad and the services already deployed.
+On the first execution of the rover ignite command, you will notice some red errors. It is expected as nothing has been deployed yet and the rover ignite is trying to find the launchpad and the services already deployed.
 
 ```bash
 TASK [[level0-launchpad] Get launchpad tfstate details] **************************************************

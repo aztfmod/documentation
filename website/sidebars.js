@@ -22,6 +22,28 @@ const sidebars = {
     'intro',
     {
       type: 'category',
+      label: 'landing zones intro', 
+      link: {
+        type: 'generated-index',
+      },
+      collapsed: false,
+      items: [
+        'landingzones/lz-intro'
+      ]
+    },
+    {
+      type: 'category',
+      label: 'module', 
+      link: {
+        type: 'generated-index',
+      },
+      collapsed: false,
+      items: [
+        'module/module-intro'
+      ]
+    },
+    {
+      type: 'category',
       label: 'rover', 
       link: {
         type: 'generated-index',
@@ -30,7 +52,33 @@ const sidebars = {
       items: [
         'rover/rover-intro'
       ]
-    }
+    },
+    {
+      type: 'category',
+      label: 'provider', 
+      link: {
+        type: 'generated-index',
+      },
+      collapsed: false,
+      items: [
+        'provider/provider-intro'
+      ]
+    },
+    {
+      type: 'category',
+      label: 'enterprise-scale', 
+      link: {
+        type: 'generated-index',
+        slug: '/enterprise-scale/landingzones',
+      },
+      collapsed: false,
+      items: [
+        'enterprise-scale/landingzones/eslz-intro',
+        'enterprise-scale/landingzones/platform/elsz-level0',
+        'enterprise-scale/landingzones/platform/org-setup',
+      ]
+    },
+    
   ]
 
 };

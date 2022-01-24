@@ -46,22 +46,22 @@ const config = {
         title: 'Cloud Adoption Framework',
         logo: {
           alt: 'Cloud Adoption Framework for Terraform Landing zones.',
-          src: 'img/logo.svg',
+          src: 'img/logo_landingzone.png',
         },
         items: [
           {
             type: 'doc',
             docId: 'intro',
             position: 'left',
-            label: 'Tutorial',
+            label: 'Introduction',
           },
           {
             type: 'doc',
             docId: 'rover/rover-intro',
             position: 'left',
-            label: 'Rover',
+            label: 'rover',
           },
-          {to: '/blog', label: 'Blog', position: 'left'},
+          // {to: '/blog', label: 'Blog', position: 'left'},
           {
             href: 'https://github.com/aztfmod/documentation',
             label: 'GitHub',
@@ -93,10 +93,10 @@ const config = {
           {
             title: 'More',
             items: [
-              {
-                label: 'Blog',
-                to: '/blog',
-              },
+              // {
+              //   label: 'Blog',
+              //   to: '/blog',
+              // },
               {
                 label: 'GitHub',
                 href: 'https://github.com/azure/caf-terraform-landingzones',
