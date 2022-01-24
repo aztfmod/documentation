@@ -9,7 +9,7 @@ const config = {
   title: 'Cloud Adoption Framework for Terraform Landing zones',
   tagline: 'everything as code. opinionated.',
   url: 'https://aztfmod.github.io',
-  baseUrl: '/',
+  baseUrl: '/documentation/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
