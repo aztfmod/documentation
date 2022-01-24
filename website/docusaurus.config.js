@@ -6,15 +6,15 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'Cloud Adoption Framework for Terraform Landingzones',
-  tagline: 'everything as code. opiniated.',
+  title: 'Cloud Adoption Framework for Terraform Landing zones',
+  tagline: 'everything as code. opinionated.',
   url: 'https://aztfmod.github.io',
   baseUrl: '/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
   organizationName: 'aztfmod', // Usually your GitHub org/user name.
-  projectName: 'aztfmod', // Usually your repo name.
+  projectName: 'aztfmod.github.io', // Usually your repo name.
 
   presets: [
     [
@@ -44,7 +44,7 @@ const config = {
       navbar: {
         title: 'Cloud Adoption Framework',
         logo: {
-          alt: 'Cloud Adoption Framework for Terraform Landingzones.',
+          alt: 'Cloud Adoption Framework for Terraform Landing zones.',
           src: 'img/logo.svg',
         },
         items: [
@@ -103,7 +103,7 @@ const config = {
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} Cloud Adoption Framework for Terraform Landingzones.`,
+        copyright: `Copyright © ${new Date().getFullYear()} Cloud Adoption Framework for Terraform Landing zones.`,
       },
       prism: {
         theme: darkCodeTheme,

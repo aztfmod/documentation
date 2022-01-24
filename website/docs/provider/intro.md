@@ -2,34 +2,42 @@
 sidebar_position: 1
 ---
 
-# Tutorial Introduction
+# Introduction to CAF Terraform provider
 
-Let's discover **Docusaurus in less than 5 minutes**.
+Naming convention is important, the CAF provider helps you manage naming convention (either relying on CAF recommended naming convention or using your own).
 
-## Getting Started
+The naming convention provider allows you to go faster from integration to production: while you are running it testing mode, it will generate names randomly (useful to test resources which names need to be unique in the world). Once you are done and ready to deploy for production, you select pass-through mode to use your own name (after cleaning the name based on the allowed character set for each Azure resources).
 
-Get started by **creating a new site**.
+The CAF Terraform provider is verified by Hashicorp and is present in the [Hashicorp Terraform registry here](https://registry.terraform.io/providers/aztfmod/azurecaf/latest) and you can contribute to it [on GitHub.](https://github.com/aztfmod/terraform-azurerm-caf)
 
-Or **try Docusaurus immediately** with **[docusaurus.new](https://docusaurus.new)**.
+To use the provider, simply add:
 
-## Generate a new site
-
-Generate a new Docusaurus site using the **classic template**:
-
-```shell
-npm init docusaurus@latest my-website classic
+```terraform
+terraform {
+  required_providers {
+    azurecaf = {
+      source = "aztfmod/azurecaf"
+      version = "1.2.11"
+    }
+  }
+}
 ```
 
-## Start your site
+Example usage:
 
-Run the development server:
+```terraform
+resource "azurecaf_name" "rg_example" {
+  name            = "demogroup"
+    resource_type   = "azurerm_resource_group"
+    prefixes        = ["a", "b"]
+    suffixes        = ["y", "z"]
+    random_length   = 5
+    clean_input     = true
+}
 
-```shell
-cd my-website
+resource "azurerm_resource_group" "demo" {
+  name     = azurecaf_name.rg_example.result
+  location = "southeastasia"
+}
 
-npx docusaurus start
 ```
-
-Your site starts at `http://localhost:3000`.
-
-Open `docs/intro.md` and edit some lines: the site **reloads automatically** and displays your changes.
