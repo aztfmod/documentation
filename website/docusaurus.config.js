@@ -8,7 +8,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 const config = {
   title: 'Cloud Adoption Framework for Terraform Landing zones',
   tagline: 'everything as code. opinionated.',
-  url: 'https://aztfmod.github.io',
+  url: 'https://aztfmod.github.io/documentation',
   baseUrl: '/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
