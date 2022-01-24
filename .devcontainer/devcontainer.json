@@ -33,6 +33,7 @@
     "extensions": [
         // "4ops.terraform",
         "mutantdino.resourcemonitor",
-        "xyc.vscode-mdx-preview"
+        "xyc.vscode-mdx-preview",
+        "docsmsft.docs-authoring-pack"
     ]
 }
