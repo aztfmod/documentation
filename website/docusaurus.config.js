@@ -34,6 +34,14 @@ const config = {
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
         },
+        gtag: {
+          trackingID: 'G-GCM5PJNDCN',
+          anonymizeIP: true,
+        },
+        googleAnalytics: {
+          trackingID: 'G-GCM5PJNDCN',
+          anonymizeIP: true,
+        },
       }),
     ],
   ],
@@ -110,16 +118,7 @@ const config = {
         theme: darkCodeTheme,
         darkTheme: darkCodeTheme,
       },
-    }),
-  plugins: [
-      [
-        '@docusaurus/plugin-google-analytics',
-        {
-          trackingID: 'G-GCM5PJNDCN',
-          anonymizeIP: true,
-        },
-      ],
-    ],
+    })
 };
 
 module.exports = config;
