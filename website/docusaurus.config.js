@@ -65,9 +65,33 @@ const config = {
           },
           {
             type: 'doc',
+            docId: 'fundamentals/lz-intro',
+            position: 'left',
+            label: 'Fundamentals',
+          },
+          {
+            type: 'doc',
+            docId: 'module/module-intro',
+            position: 'left',
+            label: 'Module',
+          },
+          {
+            type: 'doc',
             docId: 'rover/rover-intro',
             position: 'left',
-            label: 'rover',
+            label: 'Rover',
+          },
+          {
+            type: 'doc',
+            docId: 'provider/provider-intro',
+            position: 'left',
+            label: 'Provider',
+          },
+          {
+            type: 'doc',
+            docId: 'enterprise-scale/landingzones/eslz-intro',
+            position: 'left',
+            label: 'Enterprise-scale',
           },
           // {to: '/blog', label: 'Blog', position: 'left'},
           {

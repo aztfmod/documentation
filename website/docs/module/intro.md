@@ -11,7 +11,7 @@ We have seen numerous customers spending much times creating their own Terraform
 
 The core concept of the module is to compose an environment based on Terraform configuration files instead of writing ad-hoc code for each components.
 
-We want to promote '**infrastructure-as-data**" in favor of adhoc "infrastructure-as-code", to make composition more accessible and rely on a strong community to write code.
+We want to promote "**infrastructure-as-data**" in favor of adhoc "infrastructure-as-code", to make composition more accessible and rely on a strong community to write code.
 
 ## Why using CAF module?
 
