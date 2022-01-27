@@ -7,7 +7,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: 'Cloud Adoption Framework for Terraform Landing zones',
-  tagline: 'everything as code. opinionated.',
+  tagline: 'Everything-as-code. Opinionated.',
   url: 'https://aztfmod.github.io',
   baseUrl: '/documentation/',
   onBrokenLinks: 'throw',
@@ -111,6 +111,15 @@ const config = {
         darkTheme: darkCodeTheme,
       },
     }),
+  plugins: [
+      [
+        '@docusaurus/plugin-google-analytics',
+        {
+          trackingID: 'G-GCM5PJNDCN',
+          anonymizeIP: true,
+        },
+      ],
+    ],
 };
 
 module.exports = config;
