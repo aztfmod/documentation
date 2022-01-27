@@ -1,5 +1,6 @@
 ---
-sidebar_position: 1
+id: gitops-intro
+sidebar_position: 6
 ---
 
 ## GitOps for Azure landing zones

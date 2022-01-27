@@ -12,7 +12,7 @@ const config = {
   baseUrl: '/documentation/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
-  favicon: 'img/favicon.ico',
+  favicon: 'img/landingzones.ico',
   organizationName: 'aztfmod', // Usually your GitHub org/user name.
   projectName: 'documentation', // Usually your repo name.
 

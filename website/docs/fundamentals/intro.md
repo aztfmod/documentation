@@ -1,9 +1,9 @@
 ---
 id: lz-intro
-sidebar_position: 2
+sidebar_position: 1
 ---
 
-# CAF Terraform landing zones core mechanisms
+# Levels Hierarchy
 
 To address enterprise complexity, we recommend isolating and decomposing a complex environment in multiple state files.
 
@@ -114,44 +114,3 @@ In the example above, each pipeline will have its lifecycle management:
 
 An enterprise environment will consist of a series of pipelines enforcing the different types of environments in different subscriptions.
 
-## Compute Nodes
-
-Since many organizations do not desire to share sensitive credentials or privileges on public running agents, most of the time, enterprises will delegate running a landing zone to dedicated compute nodes, running from their private virtual networks. Depending on your Continuous Integration and Continuous Deployment toolset, those compute capabilities could be called self-hosted agents, runners, etc.
-
-Those compute capabilities would need to run containers as the rover and could be implemented in the shape of:
-
-- An **Azure Virtual Machines** for each level in a given environment, each VM can contain a set of runners(container instances), that would be ready to be invoked and run in parallel if required.
-- An **Azure Kubernetes Services** for a given environment. Each level would be impersonated in a different node pool, and each node pool would use [Azure Active Directory pod identity](https://docs.microsoft.com/azure/aks/use-azure-ad-pod-identity). If there is a need to increase the number of runners for a particular level, this could be achieved using AKS pod autoscaler capability.
-
-CAF Terraform landing zones provide by default a set of DevOps runners for the following platforms: [GitHub Actions](https://github.com/features/actions), [Azure DevOps](https://docs.microsoft.com/azure/devops/pipelines/agents/agents), [Git Lab](https://docs.gitlab.com/runner/), [Terraform Cloud and Terraform Enterprise](https://www.terraform.io/docs/cloud/agents/index.html) and are available on [GitHub](https://github.com/aztfmod/rover/tree/master/agents) for customization.
-
-![Example of DevOps Compute Nodes for the GitOps environment](../../static/img/landingzones/terraform-model-gitops.png)
-
-*Figure 3: Example of DevOps Compute Nodes for the GitOps environment*
-
-## Authentication and authorization
-
-As default methodology, CAF Terraform landing zones use [Azure Managed Identities](https://docs.microsoft.com/azure/active-directory/managed-identities-azure-resources/overview) capability for the DevOps compute nodes running on Azure.
-
-Customer can also use Service principals to be used at different levels of the hierarchy, the down-side of using Service Principal is to manage lifecycle of the attached secrets.
-
-The authorization related to either type of principals can be defined as part of the CAF Terraform landing zones configuration syntax.
-
-## Transparent composition across layers
-
-To deliver a complete environment, just as for any other software project, we want to avoid a monolithic configuration and instead compose an environment calling multiple landing zones.
-
-With Terraform, you can read a state file's output and use it as input variables for another landing zone.
-
-We use this feature to compose complex architectures as illustrated above, without writing any line of code. Reading another landing zone content is implemented by a variable, vastly simplifying for you the composition and the complex configuration creation.
-
-### Global settings
-
-A few exceptions exist to the hierarchy model, there are variables and value that are persisted across all levels and reachable from all levels:
-
-* **global settings**: everything related to the commons for a particular environment (which regions are supported for an environment, which naming convention is used, the tags inheritance settings, etc.)
-* **diagnostics settings**: any diagnostics repository you create at any level will be stored and will become composable from the current and above levels.
-
-## Deploy sample configuration
-
-Now that you understand the basic mechanisms, you can review a sample configuration of different levels into the CAF Starter repo, which contains a sample hierarchy that you can deploy within a same subscription or scaling across multiple subscriptions.
