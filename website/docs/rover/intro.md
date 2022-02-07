@@ -7,7 +7,7 @@ sidebar_position: 3
 
 ## What is CAF rover?
 
-Although as a first approach it might seem more natural and simple to use Terraform on your laptop, the CAF **rover** is helping you managing your Terraform deployments on Microsoft Azure and is composed of two parts:
+Although as a first approach it might seem more natural and simple to use Terraform on your laptop, the CAF **rover** is helping you managing your Terraform deployments on Microsoft Azure and has two dimensions:
 
 * **A container**
 
@@ -30,11 +30,18 @@ Although as a first approach it might seem more natural and simple to use Terraf
 * Ubiquitous development environment: everyone works with the same versions of the DevOps toolchain, always up-to-date, running on laptop, pipelines, GitHub Codespaces, etc.
 * Facilitates the identity transition to any CI/CD: namely all CI/CD have container capabilities.
 * Allows easy transition from one DevOps environment to another (GitHub Actions, Azure DevOps, Jenkins, CircleCI etc.)
+* It's open-source and leveraging open-source projects that you often need with Terraform.
 
 ## Where to find CAF rover?
 
 It's an open-source project and you can find stable or preview builds directly from [Docker Hub](https://hub.docker.com/search?q=aztfmod&type=image), or create your own, to match your organization's own DevOps toolkit. You can find the [rover project here](https://github.com/aztfmod/rover).
 
+## Do I have to use rover?
+
+Nope, you can use all the tools here separately, but it means you will have to do manually everything rover does :)
+
 ## How to use CAF rover?
 
 Rover is already included in development environment for CAF Terraform (the ```.devcontainer``` folder in the various projects).
+
+[![asciicast](https://asciinema.org/a/413478.svg)](https://asciinema.org/a/413478)

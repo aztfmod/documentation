@@ -22,7 +22,7 @@ const FeatureList = [
     ),
   },
   {
-    title: 'DevOps friendly',
+    title: 'DevOps by nature',
     Svg: require('../../static/img/undraw_docusaurus_react.svg').default,
     description: (
       <>
