@@ -15,4 +15,3 @@ A level0 landing zone is the foundation of account and subscription management. 
 * Defining the management of the principals or identities for a complex environment.
 * Defining how to access/partition the different subscriptions.
 * Defining the DevOps foundations.
-* Defining initial blueprints
