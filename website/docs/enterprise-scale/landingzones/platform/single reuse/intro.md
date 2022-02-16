@@ -1,20 +1,15 @@
 ---
-id: elsz-level0
-sidebar_position: 2
+id: elsz-single-reuse
+sidebar_position: 1
 ---
 
-# Ignite the platform
+# Single subscription deployment lab
 
-Once you have completed the customization of the default templates to your needs, you will use the rover ignite command that will guide you in the generation of the Terraform configuration files and help you gradually deploying the Azure services in the platform landing zones. This tutorial, is showing you how to deploy using the interactive mode from the visual studio code console.
+## Objectives
 
-More scenario will be added in the coming months:
+Purpose of this lab is to get you starter with a mono-subscription environment which will deploy full features and will allow you to experiment landing zones mechanisms, cross-state composition etc.
 
-- Deployment from pipelines (Github, Jenkins, Azure Devops, Gitlab)
-- Azure subscription creation automation
-- Azure Subscription Vending Machine (ASVM) to generate application landing zones
-- Deployment of a landingzone accelerator in an application landingzone
-
-## Privileges
+## Required privileges
 
 :::note
 To deploy the platform landing zones, you need the following privileges
@@ -25,19 +20,40 @@ Azure Active Directory:
 
 Azure subscriptions:
 
-- Management (owner)
-- Identity (owner)
-- Connectivity (owner)
+- 1 subscription with owner privileges.
+
+Management groups:
+
+- "management group contributor" permissions on a branch or root management group.
 
 :::
 
+## Copy the configuration files
 
-## Login the Azure management subscription
-
-The first is to login the terminal session to your Azure tenant and subscription.
+Let's now pick the right configuration files example from the landing zones and put it in our configuration repository. You can drag and drop or just run the following command:
 
 ```bash
-➜  landingzones git:(2112.int) ✗ rover login -t <tenant_name> -s <management_guid_subscription>
+cp -r -T /tf/caf/landingzones/templates/enterprise-scale/contoso/platform/single_subscription /tf/caf/definitions
+```
+
+We now have the right files inside the definition template, let's review and customize it.
+
+## Review and customize the configuration files
+
+As general guidance, we recommend you take a file-by-file review and search for ```<replace>``` tag we put in the YAML files.
+
+Having a more structured review would start with:
+
+1. *.lab.caf.yaml
+2. subscriptions.yaml
+3. enterprise-scale settings
+
+## Login to Azure
+
+Once you have a first set of configuration files, let's log into the terminal session to your Azure tenant and subscription.
+
+```bash
+➜  rover login -t <tenant_name> -s <management_guid_subscription>
 
   /$$$$$$   /$$$$$$  /$$$$$$$$       /$$$$$$$
  /$$__  $$ /$$__  $$| $$_____/      | $$__  $$
@@ -49,19 +65,19 @@ The first is to login the terminal session to your Azure tenant and subscription
  \______/ |__/  |__/|__/            |__/  |__/ \______/     \_/   \_______/|__/
 
 
-              version: aztfmod/rover-preview:1.1.3-2201.181012
+              version: aztfmod/rover:1.1.3-2201.2106
 
 @calling verify_azure_session
 
 Checking existing Azure session
 Login to azure with tenant terraformdev.onmicrosoft.com
-WARNING: To sign in, use a web browser to open the page https://microsoft.com/devicelogin and enter the code 12345567 to authenticate.
+WARNING: To sign in, use a web browser to open the page https://microsoft.com/devicelogin and enter the code D9SPMXLU4 to authenticate.
 
 ```
 
 Click on the URL [https://microsoft.com/devicelogin](https://microsoft.com/devicelogin), set the code and authenticate with your Azure Account.
 
-When the login is successfull, you see the rover displaying the context of your Azure environment. Verify everything is correct.
+When the login is successful, you see the rover displaying the context of your Azure environment. Verify everything is correct.
 
 ```bash
 Set default subscription to 558a029f-aba1-47ff-b620-1d01350e2dd5
@@ -82,7 +98,7 @@ Resources from this landing zone are going to be deployed in the following subsc
   "state": "Enabled",
   "tenantId": "6700cd11-1a2f-42e9-9ef4-1a919dd66613",
   "user": {
-    "name": "lalesle@microsoft.com",
+    "name": "user@terraformdev.onmicrosoft.com",
     "type": "user"
   }
 }
@@ -120,19 +136,22 @@ clean_up backend_files
 ➜  caf git:(main) ✗ 
 ```
 
-## Trigger rover ignite
+You can review rover output confirming the authenticated context for AAD and for subscription, as well as the possible next commands.
 
-From now on you will have to follow the readme.md located in your repository (**/tf/caf/orgs/contoso/platform/README.md**) and follow the instructions
+## Trigger the rover ignite
+
+After this step you will have to follow the readme.md located in your repository (**/tf/caf/definitions/README.md**) and follow the instructions. The first step to generate the Terraform configuration files and customized readme with rover ignite:
 
 ```bash
 rover ignite \
   --playbook /tf/caf/landingzones/templates/platform/ansible.yaml \
   -e base_templates_folder=/tf/caf/landingzones/templates/platform \
   -e resource_template_folder=/tf/caf/landingzones/templates/resources \
-  -e config_folder=/tf/caf/orgs/contoso/platform
+  -e config_folder=/tf/caf/definitions/ \
+  -e landingzones_folder=/tf/caf/landingzones
 ```
 
-The output of the rover ignite will start creating the target configuration folder structure and Terraform files.
+The output of the rover ignite will start creating the target configuration folder structure and Terraform files as follow:
 
 ```bash
 TASK [[level0-launchpad] Clean-up directory] *************************************************************
@@ -197,4 +216,10 @@ skipping: [localhost]
 
 Go to the /tf/caf/configuration/contoso/platform/level0/launchpad/readme.md
 
-![](./level0-launchpad-readme.png)
+![](../level0-launchpad-readme.png)
+
+## Next steps
+
+Once launchpad is deployed, follow the next steps as indicated into the readme.md file of your configuration folder. This file has been crafted specially with the settings you entered in the YAML files, so after review.
+
+Once level 0 is completed, you can carry on with level 1: management, identity, then eslz. Once level 1 is completed, level 2 asvm and identity can be deployed, alongside with connectivity components stating with virtual wan.

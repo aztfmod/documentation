@@ -1,6 +1,6 @@
 ---
 id: eslz-intro
-sidebar_position: 5
+sidebar_position: 1
 ---
 
 # Getting started
@@ -20,8 +20,6 @@ This tutorial will guide you on how to deploy the Platform landing zones and inc
 - Monitoring services
 - Connectivity services (virtual WAN, private DNS zones, egress firewall...)
 
-Based on your configuration you can select the following deployment guide:
+The steps in the tutorial will guide you through the following process:
 
-|Microsoft Billing Account | Scenario | Link|
-|--------------------------|----------|-----|
-| Enterprise Agreement | Deploy on existing Azure subscriptions | [Getting started](./platform/org-setup.mdx)
+![Creation of enterprise-scale environment](./process-eslz.png)
