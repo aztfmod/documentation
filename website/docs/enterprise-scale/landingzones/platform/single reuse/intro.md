@@ -28,32 +28,12 @@ Management groups:
 
 :::
 
-## Copy the configuration files
-
-Let's now pick the right configuration files example from the landing zones and put it in our configuration repository. You can drag and drop or just run the following command:
-
-```bash
-cp -r -T /tf/caf/landingzones/templates/enterprise-scale/contoso/platform/single_subscription /tf/caf/definitions
-```
-
-We now have the right files inside the definition template, let's review and customize it.
-
-## Review and customize the configuration files
-
-As general guidance, we recommend you take a file-by-file review and search for ```<replace>``` tag we put in the YAML files.
-
-Having a more structured review would start with:
-
-1. *.lab.caf.yaml
-2. subscriptions.yaml
-3. enterprise-scale settings
-
 ## Login to Azure
 
-Once you have a first set of configuration files, let's log into the terminal session to your Azure tenant and subscription.
+First step is to login to your Azure environment, you can simply run 
 
 ```bash
-➜  rover login -t <tenant_name> -s <management_guid_subscription>
+➜  rover login 
 
   /$$$$$$   /$$$$$$  /$$$$$$$$       /$$$$$$$
  /$$__  $$ /$$__  $$| $$_____/      | $$__  $$
@@ -65,7 +45,7 @@ Once you have a first set of configuration files, let's log into the terminal se
  \______/ |__/  |__/|__/            |__/  |__/ \______/     \_/   \_______/|__/
 
 
-              version: aztfmod/rover:1.1.3-2201.2106
+              version: aztfmod/rover:1.1.6-2202.2503
 
 @calling verify_azure_session
 
@@ -138,20 +118,47 @@ clean_up backend_files
 
 You can review rover output confirming the authenticated context for AAD and for subscription, as well as the possible next commands.
 
+
+## Create the definition template on your work environment
+
+Let's now pick the right configuration files example from the landing zones and put it in our configuration repository.
+
+Just run the following command:
+
+```bash
+'/tf/caf/landingzones/templates/platform/deploy_platform.sh'
+```
+
+The first time you run the command, you will be prompted a couple of simple questions as follow:
+
+```
+[WARNING]: No inventory was parsed, only implicit localhost is available
+[WARNING]: provided hosts list is empty, only localhost is available. Note that the implicit localhost does not match 'all'
+Set the short version of your customer name with no spaces [contoso]: 
+Set the CAF Environment value [contoso]: 
+Set the prefix to add to all resource. [caf]: 
+Management group prefix (value must be between 2 to 10 characters long and can only contain alphanumeric characters and hyphens). [es]: 
+Management group name [Contoso]: 
+Email address to send all notifications [email@address.com]: 
+Azure regions (lowercase, short version) [{'region1': 'southeastasia', 'region2': 'eastasia'}]: 
+Default CAF Azure region key [region1]: 
+```
+
+## Review and customize the definition files
+
+The definition files are now generated. The consist in a set of YAML files that will be easy to get you started.
+
+
 ## Trigger the rover ignite
 
 After this step you will have to follow the readme.md located in your repository (**/tf/caf/definitions/README.md**) and follow the instructions. The first step to generate the Terraform configuration files and customized readme with rover ignite:
 
 ```bash
-rover ignite \
-  --playbook /tf/caf/landingzones/templates/platform/ansible.yaml \
-  -e base_templates_folder=/tf/caf/landingzones/templates/platform \
-  -e resource_template_folder=/tf/caf/landingzones/templates/resources \
-  -e config_folder=/tf/caf/definitions/ \
-  -e landingzones_folder=/tf/caf/landingzones
+ansible-playbook /tf/caf/landingzones/templates/ansible/ansible.yaml \
+  --extra-vars "@/tf/caf/platform/definition/ignite.yaml"
 ```
 
-The output of the rover ignite will start creating the target configuration folder structure and Terraform files as follow:
+The output of the ignite will start creating the target configuration folder structure and Terraform files as follow:
 
 ```bash
 TASK [[level0-launchpad] Clean-up directory] *************************************************************
@@ -222,4 +229,4 @@ Go to the /tf/caf/configuration/contoso/platform/level0/launchpad/readme.md
 
 Once launchpad is deployed, follow the next steps as indicated into the readme.md file of your configuration folder. This file has been crafted specially with the settings you entered in the YAML files, so after review.
 
-Once level 0 is completed, you can carry on with level 1: management, identity, then eslz. Once level 1 is completed, level 2 asvm and identity can be deployed, alongside with connectivity components stating with virtual wan.
+Once level 0 is completed, you can carry on with level 1: management, identity, then alz. Once level 1 is completed, level 2 azure subscription vending machine (asvm) and identity can be deployed, alongside with connectivity components stating with virtual WAN.

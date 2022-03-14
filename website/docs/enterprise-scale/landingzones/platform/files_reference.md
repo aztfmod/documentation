@@ -124,7 +124,7 @@ The private lib defines logic for each version of enterprise scale module, typic
       v0.3.3:
         caf_landingzone_branch: "patch.5.4.4"
       v1.1.1:
-        caf_landingzone_branch: "aci_network"
+        caf_landingzone_branch: "2203.0"
 ```
 
 ### platform_management
