@@ -94,10 +94,6 @@ And you are ready to go:
 </Tabs>
 
 
-On the right lower end side of the editor, open a ```zsh``` terminal to start exploring the folders and branch you are using.
-
-![](vscode-open-zsh.png)
-
 You should now see the following terminal. This terminal is where you will run all terminal commands described in this on-boarding tutorial.
 
 ![](vscode-zsh.png)
@@ -112,7 +108,7 @@ The CAF Terraform landingzones framework assumes the landingzones Terraform code
 :::
 
 :::caution
-Do not use another name as **landingzones**
+Do not use another name as **landingzones**. It is a convention used to drive consistency.
 :::
 
 ```bash
@@ -147,14 +143,17 @@ The CAF Terraform landingzones are released on regular basis. In order to align 
 From the terminal, run the following command to select the branch:
 
 ```bash
-git checkout aci_network
-Branch 'aci_network' set up to track remote branch 'aci_network' from 'origin'.
-Switched to a new branch 'aci_network'
-➜  landingzones git:(aci_network) ✗ 
+git checkout 2203.0
+
+Note: switching to '2203.0'.
+
+You are in 'detached HEAD' state. You can look around, make experimental
+changes and commit them, and you can discard any commits you make in this
+state without impacting any branches by switching back to a branch.
 ```
 
 :::note
-The branch name in parentheses has changed from **main** to **aci_network**
+The detached head is expected as your are getting to a tag (release version) and not into a branch. 
 :::
 
 Go to the next step to choose your scenario!

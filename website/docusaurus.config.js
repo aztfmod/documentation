@@ -117,6 +117,10 @@ const config = {
             title: 'Community',
             items: [
               {
+                label: 'Arnauds blog',
+                href: 'https://aka.ms/arnaud',
+              },
+              {
                 label: 'Gitter',
                 href: 'https://gitter.im/aztfmod/community',
               },
