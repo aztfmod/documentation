@@ -118,7 +118,6 @@ clean_up backend_files
 
 You can review rover output confirming the authenticated context for AAD and for subscription, as well as the possible next commands.
 
-
 ## Create the definition template on your work environment
 
 Let's now pick the right configuration files example from the landing zones and put it in our configuration repository.
@@ -131,7 +130,7 @@ Just run the following command:
 
 The first time you run the command, you will be prompted a couple of simple questions as follow:
 
-```
+```bash
 [WARNING]: No inventory was parsed, only implicit localhost is available
 [WARNING]: provided hosts list is empty, only localhost is available. Note that the implicit localhost does not match 'all'
 Set the short version of your customer name with no spaces [contoso]: 
@@ -144,14 +143,23 @@ Azure regions (lowercase, short version) [{'region1': 'southeastasia', 'region2'
 Default CAF Azure region key [region1]: 
 ```
 
+When completed you can go the launchpad readme.
+
+![Launchpad Getting started](getting-started.png)
+
 ## Review and customize the definition files
+
+```bash
+
+/tf/caf/platform/definition/GETTING-STARTED.md
+
+```
 
 The definition files are now generated. The consist in a set of YAML files that will be easy to get you started.
 
-
 ## Trigger the rover ignite
 
-After this step you will have to follow the readme.md located in your repository (**/tf/caf/definitions/README.md**) and follow the instructions. The first step to generate the Terraform configuration files and customized readme with rover ignite:
+After this step you will have to follow the readme.md located in your repository (**/tf/caf/platform/definition/GETTING-STARTED.md**) and follow the instructions. The first step to generate the Terraform configuration files and customized readme with rover ignite:
 
 ```bash
 ansible-playbook /tf/caf/landingzones/templates/ansible/ansible.yaml \
