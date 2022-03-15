@@ -87,7 +87,7 @@ rover workspace create application-workspace -level level1 -env contoso-sandpit
 Delete a workspace:
 
 ```bash
-rover workspace create application-workspace -level level1 -env contoso-sandpit
+rover workspace delete application-workspace -level level1 -env contoso-sandpit
 ```
 
 List all workspaces for a level in an environment:
