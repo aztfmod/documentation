@@ -74,6 +74,58 @@ The following table summarizes the most common parameters and their default valu
 | -skip-permission-check            | no       | N/A                                                                                                | Flag to skip the check that the currently logged-in principal is owner of the target subscription (only checked for launchpad)                                                                                                                                            | ```-skip-permission-check ```                                          |
 | -impersonate-sp-from-keyvault-url | no       | N/A                                                                                                | Flag that indicates rover to use impersonate the Service Principal and use the credentials stored in the Azure Key Vault which URL is specified as parameter. Requires launchpad_credentials landing zone to be setup (more details to be published soon.)                                    | ```-impersonate-sp-from-keyvault-url https://myakv.vault.azure.net/``` |
 
+## Examples
+
+### untaint
+
+When a resource has been marked as tainted and you want to untaint it.
+
+```shell
+# module.solution.module.storage_containers["storageWorkspace_di001"].azurerm_storage_container.stg is tainted, so must be replaced
++/- resource "azurerm_storage_container" "stg" {
+      ~ has_immutability_policy = false -> (known after apply)
+      ~ has_legal_hold          = false -> (known after apply)
+      ~ id                      = "https://xxxxxxxxxxxxxxxx.blob.core.windows.net/di001" -> (known after apply)
+      ~ metadata                = {} -> (known after apply)
+        name                    = "di001"
+      ~ resource_manager_id     = "/subscriptions/000000000-0000-0000-0000-000000000000/resourceGroups/cont-rg-data-landing-zone-storage-lqi/providers/Microsoft.Storage/storageAccounts/xxxxxxxxxxxxxxx/blobServices/default/containers/di001" -> (known after apply)
+        # (2 unchanged attributes hidden)
+    }
+```
+
+You need to extract the terraform resource. In our example:
+
+```shell
+module.solution.module.storage_containers["storageWorkspace_di001"].azurerm_storage_container.stg
+```
+
+and run the following rover command. You need to wrap the resource under double quotes and escape the quotes in the square brakets.
+
+```bash 
+rover \
+  --impersonate-sp-from-keyvault-url https://cont-kv-scl-xxx.vault.azure.net/ \  // Remove this line if you are not using service principals
+  -lz /tf/caf/landingzones/caf_solution \
+  -tfstate_subscription_id 000000000-0000-0000-0000-000000000000 \
+  -target_subscription 000000000-0000-00000-00000000 \
+  -tfstate data-landing-zone_prod_level3.tfstate \
+  -env contoso \
+  -level level3 \
+  -w data-landing-zone-prod `\
+  -p ${TF_DATA_DIR}/data-landing-zone_prod_level3.tfstate.tfplan \
+  -a untaint "module.solution.module.storage_containers[\"storageWorkspace_di001\"].azurerm_storage_container.stg" 
+  ```
+
+When executed the rover will display a similar output.
+
+```shell
+Terraform has been successfully initialized!
+Terraform init return code 0
+@calling other
+running terraform untaint -state=/home/vscode/.terraform.cache/contoso/rover_jobs/20220316003626962686570/tfstates/level3/data-landing-zone-prod/data-landing-zone_prod_level3.tfstate  module.solution.module.storage_containers["storageWorkspace_di001"].azurerm_storage_container.stg
+Resource instance module.solution.module.storage_containers["storageWorkspace_di001"].azurerm_storage_container.stg has been successfully untainted.
+Terraform untaint return code: 0
+```
+
 ## Workspace management
 
 In the previous section, workspace is used as a argument to specify where to place the tfstate (in-lieu of the default ```tfstate``` container inside the storage account), rover workspace can be used as a command to manage workspaces:
