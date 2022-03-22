@@ -7,7 +7,10 @@ sidebar_position: 1
 
 ## Objectives
 
-Purpose of this lab is to get you starter with a mono-subscription environment which will deploy full features and will allow you to experiment landing zones mechanisms, cross-state composition etc.
+Purpose of this lab is to get you started with a mono-subscription environment which will deploy full features and will allow you to experiment landing zones mechanisms and cross-state composition. It will create a platform definition you can then customize to your needs showing you a single Azure region with a production and non_production environment.
+
+![image](https://user-images.githubusercontent.com/4702224/158935809-d1360dd6-a447-4e35-a6f8-7c8ac2966033.png)
+
 
 ## Required privileges
 
