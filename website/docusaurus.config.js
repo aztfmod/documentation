@@ -49,7 +49,6 @@ const config = {
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
-      metadata: [{name:"robots", content:"noindex"}],
       navbar: {
         title: 'Cloud Adoption Framework',
         logo: {
@@ -89,9 +88,9 @@ const config = {
           },
           {
             type: 'doc',
-            docId: 'enterprise-scale/landingzones/eslz-intro',
+            docId: 'azure-landing-zones/landingzones/alz-intro',
             position: 'left',
-            label: 'Enterprise-scale',
+            label: 'Azure landing zones',
           },
           // {to: '/blog', label: 'Blog', position: 'left'},
           {
