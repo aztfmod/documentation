@@ -136,16 +136,20 @@ Updating files: 100% (406/406), done.
 ➜  landingzones git:(main) ✗ 
 ```
 
-### Switch to the selected landingzones version
+### Switch to the selected landingzones tag 
 
-The CAF Terraform landingzones are released on regular basis. In order to align the deployment instructions, you need to make sure the Terraform code is also using the correct branch or tag.
+Latest features on CAF Terraform landingzones repository are released on regular basis. In order to align the deployment instructions, you need to make sure the Terraform code is also using the correct branch or tag.Please check the latest tag by going to release tag from the landingzones repo.
 
-From the terminal, run the following command to select the branch:
+![](repo-tag.png)
+
+From the terminal, run the following command to checkout to the latest tag: 
+
+Ex: git checkout <latesttag>. As, when we are updating the doc, latest tag available is <<2203.1>>  as shown above.
 
 ```bash
-git checkout 2203.0
+git checkout 2203.1
 
-Note: switching to '2203.0'.
+Note: switching to '2203.1'.
 
 You are in 'detached HEAD' state. You can look around, make experimental
 changes and commit them, and you can discard any commits you make in this
