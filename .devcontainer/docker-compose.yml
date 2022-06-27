@@ -6,7 +6,7 @@
   version: '3.7'
   services:
     rover:
-      image: node
+      image: node:17.9.1
 
       labels:
         - "caf=Azure CAF"
