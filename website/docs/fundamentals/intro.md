@@ -28,7 +28,7 @@ A level groups together a set of state files that needs separation because of di
 
 The model can be summarized as below:
 
-![Model for levels for CAF Terraform landing zones](../../static/img/landingzones/terraform-model-levels.png)
+![Model for levels for CAF Terraform landing zones](./pictures/terraform-model-levels.png)
 *Figure 1: An overview of the levels proposed by CAF Terraform landing zones to structure Terraform states*
 
 The core principles are:
@@ -83,12 +83,12 @@ This level contains the application configuration **delegated for application te
 It contains for example Azure Kubernetes Services Cluster, API Management services and all its dependency to deliver a service. This can be sourced from Azure landing zones solution accelerators, a custom solutions implemented using CAF module or any other Terraform code.
 
 The following pictures illustrates the split between level 3 and 4:
-![Data and AI landing zones accross level 3 and 4](../../static/img/landingzones/terraform-model-levels3-4.png)
+![Data and AI landing zones accross level 3 and 4](./pictures/terraform-model-levels3-4.png)
 *Figure 2: Example of Data and AI landing zone for level 3 and 4*
 
 The broader picture on the complete environment would look like that:
 
-![Subscription Vending Machine Example](../../static/img/landingzones/terraform-model-levels-svm.png)
+![Subscription Vending Machine Example](./pictures/terraform-model-levels-svm.png)
 *Figure 3: Subscription Vending Machine Example*
 
 ### Operating with levels

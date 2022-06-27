@@ -15,7 +15,7 @@ Those compute capabilities would need to run containers as the rover and could b
 
 CAF Terraform landing zones provide by default a set of DevOps runners for the following platforms: [GitHub Actions](https://github.com/features/actions), [Azure DevOps](https://docs.microsoft.com/azure/devops/pipelines/agents/agents), [Git Lab](https://docs.gitlab.com/runner/), [Terraform Cloud and Terraform Enterprise](https://www.terraform.io/docs/cloud/agents/index.html) and are available on [GitHub](https://github.com/aztfmod/rover/tree/master/agents) for customization.
 
-![Example of DevOps Compute Nodes for the GitOps environment](../../static/img/landingzones/terraform-model-gitops.png)
+![Example of DevOps Compute Nodes for the GitOps environment](./pictures/terraform-model-gitops.png)
 
 *Figure 1: Example of DevOps Compute Nodes for the GitOps environment*
 
