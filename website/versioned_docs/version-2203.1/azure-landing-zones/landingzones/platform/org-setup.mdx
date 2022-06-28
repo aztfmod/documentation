@@ -1,0 +1,163 @@
+---
+id: org-setup
+sidebar_position: 1
+---
+import ReactPlayer from 'react-player'
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+
+# Setup your organization
+
+
+## Organize your private repository
+
+The first step is create a private repository in your current organization. It has to be a git repository.
+
+The video below shows you how to setup a private GitHub repository you are going to use to store the configuration of your platform landing zones.
+
+<ReactPlayer controls url='https://youtu.be/1tbXXOM1s-o' />
+
+### Clone the platform starter repository
+
+The platform starter project is an empty environment that get you started with your initial configuration files and create a coherent stack.
+
+The [platform starter project is here](https://github.com/Azure/caf-terraform-landingzones-platform-starter). 
+
+If you are using it from GitHub, you can directly select "Use this template", once created you can clone it locally or open it in GitHub Codespace (use the tabs in the following section to get the steps for the desired method.)
+
+<Tabs>
+<TabItem value="Locally" label="Locally" default>
+
+```bash
+# Adjust the name of your organization and repository
+git clone git://github.com/<org>/<repo> contoso && cd contoso
+```
+
+You should observe:
+
+```bash
+Cloning into 'contoso'...
+remote: Enumerating objects: 429, done.
+remote: Counting objects: 100% (429/429), done.
+remote: Compressing objects: 100% (320/320), done.
+remote: Total 429 (delta 110), reused 307 (delta 77), pack-reused 0
+Receiving objects: 100% (429/429), 2.93 MiB | 1.52 MiB/s, done.
+Resolving deltas: 100% (110/110), done.
+```
+
+Open Visual Studio Code from the contoso folder
+
+```bash
+code .
+```
+
+Trust the repository
+
+![](vscode-trust-folder.png) 
+
+### Visual Studio code
+
+Visual Studio code should open your cloned repository and display the following structure.
+
+![](vscode.png)
+
+### Add remote development extension
+
+Select the **Remote - Containers** extension and click Install.
+
+![](extension-remote-containers.png)
+
+### Re-open vscode in the dev container
+
+Click on the green bottom left button
+From the menu select the option
+
+![](vscode-reopen-container.png)
+
+</TabItem>
+<TabItem value="Codespace" label="Codespace">
+
+Once you have created your repo, create the Codespace: 
+
+![](codespace1.png)
+
+The Codespace is being instantiated:
+
+![](codespace2.png)
+
+And you are ready to go: 
+
+![](codespace3.png)
+
+</TabItem>
+</Tabs>
+
+
+You should now see the following terminal. This terminal is where you will run all terminal commands described in this on-boarding tutorial.
+
+![](vscode-zsh.png)
+
+
+### Clone the CAF Terraform landingzones code
+
+Now that you have the configuration folder ready to use, let's clone the logic of landing zones (the Terraform code) that we will use to run the commands.
+
+:::note
+The CAF Terraform landingzones framework assumes the landingzones Terraform code is cloned in a repository called landingzones.
+:::
+
+:::caution
+Do not use another name as **landingzones**. It is a convention used to drive consistency.
+:::
+
+```bash
+git clone https://github.com/Azure/caf-terraform-landingzones.git landingzones
+```
+
+```bash
+Cloning into 'landingzones'...
+remote: Enumerating objects: 9067, done.
+remote: Counting objects: 100% (393/393), done.
+remote: Compressing objects: 100% (281/281), done.
+remote: Total 9067 (delta 161), reused 295 (delta 108), pack-reused 8674
+Receiving objects: 100% (9067/9067), 11.65 MiB | 6.83 MiB/s, done.
+Resolving deltas: 100% (5792/5792), done.
+Updating files: 100% (406/406), done.
+```
+
+```bash
+# Go to the landingzones folder
+➜  caf git:(main) ✗ cd landingzones 
+
+# Note all folders are starting with /tf/caf in the devcontainers. 
+➜  landingzones git:(main) ✗ pwd
+/tf/caf/landingzones
+➜  landingzones git:(main) ✗ 
+```
+
+### Switch to the selected landingzones tag 
+
+Latest features on CAF Terraform landingzones repository are released on regular basis. In order to align the deployment instructions, you need to make sure the Terraform code is also using the correct branch or tag.Please check the latest tag from the landingzones repo at https://github.com/Azure/caf-terraform-landingzones/releases .
+
+![](repo-tag.png)
+
+From the terminal, run the following command to checkout to the latest tag: 
+
+As, when we are updating the doc, latest tag available is 2203.1 as shown above.
+
+```bash
+git checkout 2203.1
+
+Note: switching to '2203.1'.
+
+You are in 'detached HEAD' state. You can look around, make experimental
+changes and commit them, and you can discard any commits you make in this
+state without impacting any branches by switching back to a branch.
+```
+
+:::note
+The detached head is expected as your are getting to a tag (release version) and not into a branch. 
+:::
+
+Go to the next step to choose your scenario!
