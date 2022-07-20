@@ -6,8 +6,8 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'Cloud Adoption Framework for Terraform Landing zones',
-  tagline: 'Everything-as-code. Opinionated.',
+  title: 'Cloud Adoption Framework for Terraform landing zones',
+  tagline: 'Everything-As-Code. Opinionated.',
   url: 'https://aztfmod.github.io',
   baseUrl: '/documentation/',
   onBrokenLinks: 'throw',
@@ -93,6 +93,10 @@ const config = {
             label: 'Azure landing zones',
           },
           // {to: '/blog', label: 'Blog', position: 'left'},
+          {
+            type: 'docsVersionDropdown',
+            position: 'right',
+          },
           {
             href: 'https://github.com/aztfmod/documentation',
             label: 'GitHub',
