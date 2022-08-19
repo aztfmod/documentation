@@ -16,6 +16,10 @@ if [ -z $(which node) ]; then
   install node
 fi
 
-sudo apt upgrade -y
-
 echo "node $(node -v) is installed."
+
+sudo apt upgrade -y
+cd ./website
+yarn
+yarn build
+yarn serve
