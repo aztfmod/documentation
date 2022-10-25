@@ -19,6 +19,6 @@ fi
 sudo apt upgrade -y
 
 echo "node $(node -v) is installed."
-cd website
+cd /tf/caf/website
 yarn
 yarn build
