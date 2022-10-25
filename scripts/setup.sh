@@ -19,3 +19,6 @@ fi
 sudo apt upgrade -y
 
 echo "node $(node -v) is installed."
+cd website
+yarn
+yarn build
