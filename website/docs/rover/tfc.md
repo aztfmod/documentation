@@ -1,6 +1,6 @@
 ---
 id: rover-tfc
-sidebar_position: 5
+sidebar_position: 6
 ---
 
 # Using Terraform Cloud for state management
