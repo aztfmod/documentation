@@ -158,7 +158,7 @@ When completed you can go the launchpad readme.
 
 ```
 
-The definition files are now generated. The consist in a set of YAML files that will be easy to get you started.
+The definition files are now generated. They consist of a set of YAML files that will make it easy for you to get started.
 
 ## Trigger the rover ignite
 
