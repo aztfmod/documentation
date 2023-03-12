@@ -232,7 +232,7 @@ skipping: [localhost]
 
 ## Deploy launchpad (level0)
 
-Go to the /tf/caf/configuration/contoso/platform/level0/launchpad/readme.md
+Go to `/tf/caf/configuration/level0/launchpad/readme.md`
 
 ![](../level0-launchpad-readme.png)
 
