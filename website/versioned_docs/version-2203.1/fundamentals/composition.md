@@ -37,7 +37,7 @@ landingzone = {
 
 In the ```tfstate``` section, you can observe an object called ```launchpad```, which mentions to Terraform to load under that name, the Terraform state file ```caf_launchpad.tfstate```. That state file is stored inside the workspace (storage container) ```tfstate``` located one level lower (since current level is level1 - mentioned in the field level), then we refer to level 0.
 
-What it means that for any object inside that particular landing zones, you can refer to any object wheter it has been deployed in the same deployment or in another deployment (within the same level or one level below).
+What it means that for any object inside that particular landing zones, you can refer to any object whether it has been deployed in the same deployment or in another deployment (within the same level or one level below).
 
 For instance in your level1 - management deployment, you can deploy a resources within a resource group that has been provisioned in the level below:
 
