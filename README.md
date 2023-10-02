@@ -1,6 +1,6 @@
-# Cloud Adoption Framework Terraform landing zones documentation
+# Azure Terraform SRE documentation
 
-This repository centralizes documentation and guidance efforts to deploy CAF Terraform landing zones.
+This repository centralizes documentation and guidance efforts to deploy Azure Terraform SRE landing zones.
 
 ## Community
 
