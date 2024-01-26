@@ -3,25 +3,24 @@ id: provider-intro
 sidebar_position: 4
 ---
 
-# Introduction to CAF Terraform provider
+# Introduction to Azure Terraform SRE Terraform provider
 
-## What is CAF provider?
+## What is Azure Terraform SRE provider?
 
 Naming convention is important, the CAF provider helps you manage naming convention (either relying on CAF recommended naming convention or using your own).
 
-## Why using CAF provider?
+## Why using Azure Terraform SRE provider?
 
 The naming convention provider allows you to:
 
 1. Clean user inputs before sending to Terraform provider, verify names format, enforces prefixes/suffixes.
 2. Go faster from integration to production: while you are running it testing mode, it will generate names randomly (useful to test resources which names need to be unique in the world). Once you are done and ready to deploy for production, you select pass-through mode to use your own name (after cleaning the name based on the allowed character set for each Azure resources).
 
+## Where to find Azure Terraform SRE provider?
 
-## Where to find CAF provider?
+The Azure Terraform SRE Terraform provider is verified by Hashicorp and is present in the [Hashicorp Terraform registry here](https://registry.terraform.io/providers/aztfmod/azurecaf/latest) and you can contribute to it [on GitHub.](https://github.com/aztfmod/terraform-azurerm-caf)
 
-The CAF Terraform provider is verified by Hashicorp and is present in the [Hashicorp Terraform registry here](https://registry.terraform.io/providers/aztfmod/azurecaf/latest) and you can contribute to it [on GitHub.](https://github.com/aztfmod/terraform-azurerm-caf)
-
-## How to use the CAF provider?
+## How to use the Azure Terraform SRE provider?
 
 To use the provider, simply add:
 
@@ -38,7 +37,7 @@ terraform {
 
 ### Names as resources
 
-Initially the CAF Terraform provider was used to implement name and categorize them as resources, you can leverage it using the following syntax:
+Initially the Azure Terraform SRE Terraform provider was used to implement name and categorize them as resources, you can leverage it using the following syntax:
 
 ```terraform
 resource "azurecaf_name" "rg_example" {
@@ -96,7 +95,7 @@ Plan: 2 to add, 0 to change, 0 to destroy.
 
 ### Names as data sources
 
-Starting in the CAF provider version 1.2.22, a new feature allows you to use the provider with ```data``` source instead of ```resource```. 
+Starting in the Azure Terraform SRE provider version 1.2.22, a new feature allows you to use the provider with ```data``` source instead of ```resource```.
 This allows compacter Terraform plans and state files and computes the name at plan time.
 
 Example usage:
@@ -154,4 +153,4 @@ Terraform will perform the following actions:
 Plan: 1 to add, 0 to change, 0 to destroy.
 ```
 
-Going forward we recommend the usage of the provider as``` data source``` instead of ```resource```.
+Going forward we recommend the usage of the provider as```data source``` instead of ```resource```.

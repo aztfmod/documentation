@@ -21,7 +21,7 @@ Rover ignite is ingesting YAML files as templates that will generate both the tf
 
 ### Command reference
 
-Typical rover ignite command looks like this (however, generally speaking across CAF, we will give you specific instructions on how to use it best):
+Typical rover ignite command looks like this (however, generally speaking across Azure Terraform SRE, we will give you specific instructions on how to use it best):
 
 ```bash
 rover ignite \

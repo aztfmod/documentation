@@ -11,7 +11,6 @@ Purpose of this lab is to get you started with a mono-subscription environment w
 
 ![image](https://user-images.githubusercontent.com/4702224/158935809-d1360dd6-a447-4e35-a6f8-7c8ac2966033.png)
 
-
 ## Required privileges
 
 :::note
@@ -33,10 +32,10 @@ Management groups:
 
 ## Login to Azure
 
-First step is to login to your Azure environment, you can simply run 
+First step is to login to your Azure environment, you can simply run
 
 ```bash
-➜  rover login 
+➜  rover login
 
   /$$$$$$   /$$$$$$  /$$$$$$$$       /$$$$$$$
  /$$__  $$ /$$__  $$| $$_____/      | $$__  $$
@@ -116,7 +115,7 @@ You can deploy a landingzone with the rover by running:
 @calling clean_up_variables
 cleanup variables
 clean_up backend_files
-➜  caf git:(main) ✗ 
+➜  caf git:(main) ✗
 ```
 
 You can review rover output confirming the authenticated context for AAD and for subscription, as well as the possible next commands.
@@ -136,14 +135,14 @@ The first time you run the command, you will be prompted a couple of simple ques
 ```bash
 [WARNING]: No inventory was parsed, only implicit localhost is available
 [WARNING]: provided hosts list is empty, only localhost is available. Note that the implicit localhost does not match 'all'
-Set the short version of your customer name with no spaces [contoso]: 
-Set the CAF Environment value [contoso]: 
-Set the prefix to add to all resource. [caf]: 
-Management group prefix (value must be between 2 to 10 characters long and can only contain alphanumeric characters and hyphens). [es]: 
-Management group name [Contoso]: 
-Email address to send all notifications [email@address.com]: 
-Azure regions (lowercase, short version) [{'region1': 'southeastasia', 'region2': 'eastasia'}]: 
-Default CAF Azure region key [region1]: 
+Set the short version of your customer name with no spaces [contoso]:
+Set the Azure Terraform SRE Environment value [contoso]:
+Set the prefix to add to all resource. [caf]:
+Management group prefix (value must be between 2 to 10 characters long and can only contain alphanumeric characters and hyphens). [es]:
+Management group name [Contoso]:
+Email address to send all notifications [email@address.com]:
+Azure regions (lowercase, short version) [{'region1': 'southeastasia', 'region2': 'eastasia'}]:
+Default Azure Terraform SRE region key [region1]:
 ```
 
 When completed you can go the launchpad readme.
@@ -190,13 +189,13 @@ changed: [localhost] => (item=role_mappings)
 changed: [localhost] => (item=storage_accounts)
 
 TASK [[level0-launchpad] Clean-up identity files] ********************************************************
-skipping: [localhost] => (item=azuread_api_permissions) 
-skipping: [localhost] => (item=azuread_applications) 
-skipping: [localhost] => (item=azuread_group_members) 
-skipping: [localhost] => (item=azuread_groups) 
-skipping: [localhost] => (item=azuread_roles) 
-skipping: [localhost] => (item=keyvault_policies) 
-skipping: [localhost] => (item=service_principals) 
+skipping: [localhost] => (item=azuread_api_permissions)
+skipping: [localhost] => (item=azuread_applications)
+skipping: [localhost] => (item=azuread_group_members)
+skipping: [localhost] => (item=azuread_groups)
+skipping: [localhost] => (item=azuread_roles)
+skipping: [localhost] => (item=keyvault_policies)
+skipping: [localhost] => (item=service_principals)
 
 TASK [[level0-launchpad] lauchpad - identity - service_principal] ****************************************
 changed: [localhost] => (item=azuread_api_permissions)
@@ -213,7 +212,6 @@ skipping: [localhost]
 TASK [[level0-launchpad] Get tfstate account name] *******************************************************
 changed: [localhost]
 ```
-
 
 :::note
 On the first execution of the rover ignite command, you will notice some red errors. It is expected as nothing has been deployed yet and the rover ignite is trying to find the launchpad and the services already deployed.

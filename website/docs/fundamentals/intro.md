@@ -13,7 +13,7 @@ Another concern with state file, which calls for segregation, is the speed of in
 
 Finally since DevOps is building in teams, we want to unlock autonomy of teams yet delegating some functions (application teams will not re-invent the networking layers but build on it). It will mean the capability to read a state file to do rich composition but without the possibility to alter the state file from other teams.
 
-In CAF Terraform landing zones, separating the Terraform state files enables you to:
+In Azure Terraform SRE, separating the Terraform state files enables you to:
 
 - **Control blast radius**: if one configuration is deficient, it only impacts one landing zone and does not compromise the whole environment.
 - **Enforce standard configuration**: by using different Terraform state, you can compose a complex environment very fast.
@@ -28,16 +28,16 @@ A level groups together a set of state files that needs separation because of di
 
 The model can be summarized as below:
 
-![Model for levels for CAF Terraform landing zones](./pictures/terraform-model-levels.png)
-*Figure 1: An overview of the levels proposed by CAF Terraform landing zones to structure Terraform states*
+![Model for levels for Azure Terraform SRE](./pictures/terraform-model-levels.png)
+*Figure 1: An overview of the levels proposed by Azure Terraform SRE to structure Terraform states*
 
 The core principles are:
 
 - **One level can host multiple state files**: A level is implemented as an Azure storage account with specific permissions, you can store as many Terraform state files as necessary on a particular level.
-- **Rover helps you locate the right storage account**: Whether you are running CAF landing zones locally or in pipeline, rover helps you locate the right storage account for a given environment and level. Authorization to deploy at a level is granted by Azure RBAC model and enforced at runtime (with the current logged in user credentials, or via the pipeline credentials).
+- **Rover helps you locate the right storage account**: Whether you are running Azure Terraform SRE locally or in pipeline, rover helps you locate the right storage account for a given environment and level. Authorization to deploy at a level is granted by Azure RBAC model and enforced at runtime (with the current logged in user credentials, or via the pipeline credentials).
 - **You can only write in your current level**: at a given level, you can only write the Terraform state file that you are responsible for.
 - **Read one level down**: at any particular level, you are able to read information one level down for your composition (one AKS cluster at level 3 can read the Terraform state file at level 2 to compose).
-- **Codeless state reading and enterprise composition**: CAF Terraform landing zones come with an object model that allow to load any landing zone (given principal accessing it has access ) in memory and compose from it.
+- **Codeless state reading and enterprise composition**: Azure Terraform SRE come with an object model that allow to load any landing zone (given principal accessing it has access ) in memory and compose from it.
 
 Cloud Adoption Framework for Azure proposes a hierarchy of landing zones based on five levels as described below:
 
@@ -80,7 +80,7 @@ Capabilities in level 3 would be:
 
 This level contains the application configuration **delegated for application teams**.
 
-It contains for example Azure Kubernetes Services Cluster, API Management services and all its dependency to deliver a service. This can be sourced from Azure landing zones solution accelerators, a custom solutions implemented using CAF module or any other Terraform code.
+It contains for example Azure Kubernetes Services Cluster, API Management services and all its dependency to deliver a service. This can be sourced from Azure landing zones solution accelerators, a custom solutions implemented using Azure Terraform SRE module or any other Terraform code.
 
 The following pictures illustrates the split between level 3 and 4:
 ![Data and AI landing zones accross level 3 and 4](./pictures/terraform-model-levels3-4.png)
@@ -113,4 +113,3 @@ In the example above, each pipeline will have its lifecycle management:
 - Level 4 can be initiated as many times a day as you deploy code in your application environment.
 
 An enterprise environment will consist of a series of pipelines enforcing the different types of environments in different subscriptions.
-
