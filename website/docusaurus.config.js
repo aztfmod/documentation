@@ -138,7 +138,7 @@ const config = {
               // },
               {
                 label: 'GitHub',
-                href: 'https://github.com/azure/caf-terraform-landingzones',
+                href: 'https://github.com/aztfmod/caf-terraform-landingzones',
               },
             ],
           },

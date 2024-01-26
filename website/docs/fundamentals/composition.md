@@ -56,7 +56,7 @@ automations = {
 
 The same concept applies throughout the components of the framework and allow you to compose virtually across any object of the model. That composition model allows you to compose with the objects without caring of the real name of the object (real name of the resource, after the naming convention applies)
 
-### Composition outside of the CAF object model
+### Composition outside of the Azure Terraform SRE object model
 
 Sometimes you have to deal with objects deployed manually, via another automation. You are then able to compose with those objects referring to their resource ID or sometimes names:
 
@@ -94,6 +94,7 @@ virtual_hub_connections = {
   }
 }
 ```
+
 ### Global settings
 
 A few exceptions exist to the hierarchy model, there are variables and value that are persisted across all levels and reachable from all levels:

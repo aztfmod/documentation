@@ -39,11 +39,11 @@ export TF_VAR_workspace"networking-virtualwan-vwan-level2" #name of the workspac
 3. Run your ```rover``` command
 
 For any particular rover command you are using, add the ```-tfc``` parameter to switch to TFC/TFE storage instead of CAF Azure Storage hierarchy.
- 
+
 ```bash
-rover ... -tfc 
+rover ... -tfc
 ```
 
 ## Workspace Creation
 
-You can create your Terraform Cloud organization and workspaces manually, or if you are looking after an automated way to create them, you can use the [CAF Terraform TFC/TFE Addon](https://github.com/Azure/caf-terraform-landingzones/tree/master/caf_solution/add-ons/terraform_cloud).
+You can create your Terraform Cloud organization and workspaces manually, or if you are looking after an automated way to create them, you can use the [CAF Terraform TFC/TFE Addon](https://github.com/aztfmod/caf-terraform-landingzones/tree/master/caf_solution/add-ons/terraform_cloud).

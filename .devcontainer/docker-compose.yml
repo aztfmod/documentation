@@ -9,7 +9,7 @@
       image: node:17.9.1
 
       labels:
-        - "caf=Azure CAF"
+        - "caf=Azure Azure Terraform SRE"
 
       volumes:
         # This is where VS Code should expect to find your project's source code
@@ -25,5 +25,5 @@
   volumes:
     volume-caf-vscode:
       labels:
-        - "caf=Azure CAF"
+        - "caf=Azure Terraform SRE"
     volume-caf-vscode-bashhistory:
