@@ -194,6 +194,7 @@
     "stylehacks": "5.1.0",
     "terser-webpack-plugin": "5.3.3",
     "type-fest": "2.14.0",
+    "update-browserslist-db": "^1.0.13",
     "wait-on": "6.0.1",
     "webpack-bundle-analyzer": "4.5.0",
     "webpack-dev-middleware": "5.3.3",
