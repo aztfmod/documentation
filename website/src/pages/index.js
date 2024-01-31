@@ -30,7 +30,7 @@ export default function Home() {
   return (
     <Layout
       title={`${siteConfig.title}`}
-      description="Cloud Adoption Framework Terraform landing zones">
+      description="Azure Terraform SRE Terraform landing zones">
       <HomepageHeader />
       <main>
         <HomepageFeatures />

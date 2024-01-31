@@ -20,7 +20,7 @@ We want to promote "**infrastructure-as-data**" in favor of ad-hoc "infrastructu
 
 ## Where to find CAF module?
 
-The CAF Terraform module is verified by Hashicorp and is present in the [Hashicorp Terraform registry here](https://registry.terraform.io/modules/aztfmod) and you can contribute to the module [on GitHub.](https://github.com/aztfmod/terraform-azurerm-caf)
+The Azure Terraform SRE module is verified by Hashicorp and is present in the [Hashicorp Terraform registry here](https://registry.terraform.io/modules/aztfmod) and you can contribute to the module [on GitHub.](https://github.com/aztfmod/terraform-azurerm-caf)
 
 ## How to use CAF module?
 

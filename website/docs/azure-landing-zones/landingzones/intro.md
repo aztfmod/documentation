@@ -7,7 +7,7 @@ sidebar_position: 1
 
 ## Deploy your first platform landing zones
 
-In this tutorial you are going to learn how to build the Azure Platform Landing zones with the Cloud Adoption Framework (CAF) for Azure Terraform landing zones. It is a framework that requires to have both **advanced knowledge of Terraform and Azure services**.
+In this tutorial you are going to learn how to build the Azure Platform Landing zones with the Azure Terraform SRE (CAF) for Azure Terraform landing zones. It is a framework that requires to have both **advanced knowledge of Terraform and Azure services**.
 
 It is assumed the reader has already deep knowledge of the CAF (https://aka.ms/caf).
 It is recommended to be certified to the Azure Architecture track.

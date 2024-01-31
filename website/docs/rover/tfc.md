@@ -7,7 +7,7 @@ sidebar_position: 6
 
 ## Workspace configuration
 
-You can use Terraform Cloud or Terraform Enterprise to support CAF Terraform landing zones state files.
+You can use Terraform Cloud or Terraform Enterprise to support Azure Terraform SRE landing zones state files.
 
 Current support is for levels 3 and 4 (composition must be done with a launchpad stored on CAF Azure Storage Account).
 
@@ -46,4 +46,4 @@ rover ... -tfc
 
 ## Workspace Creation
 
-You can create your Terraform Cloud organization and workspaces manually, or if you are looking after an automated way to create them, you can use the [CAF Terraform TFC/TFE Addon](https://github.com/Azure/caf-terraform-landingzones/tree/master/caf_solution/add-ons/terraform_cloud).
+You can create your Terraform Cloud organization and workspaces manually, or if you are looking after an automated way to create them, you can use the [Azure Terraform SRE TFC/TFE Addon](https://github.com/Azure/caf-terraform-landingzones/tree/master/caf_solution/add-ons/terraform_cloud).

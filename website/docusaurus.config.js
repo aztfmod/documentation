@@ -6,7 +6,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'Cloud Adoption Framework for Terraform landing zones',
+  title: 'Azure Terraform SRE',
   tagline: 'Everything-As-Code. Opinionated.',
   url: 'https://aztfmod.github.io',
   baseUrl: '/documentation/',
@@ -50,9 +50,9 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       navbar: {
-        title: 'Cloud Adoption Framework',
+        title: 'Azure Terraform SRE',
         logo: {
-          alt: 'Cloud Adoption Framework for Terraform Landing zones.',
+          alt: 'Azure Terraform SRE',
           src: 'img/logo_landingzone.png',
         },
         items: [
@@ -143,7 +143,7 @@ const config = {
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} Cloud Adoption Framework for Terraform Landing zones.`,
+        copyright: `Copyright © ${new Date().getFullYear()} Azure Terraform SRE`,
       },
       prism: {
         theme: darkCodeTheme,

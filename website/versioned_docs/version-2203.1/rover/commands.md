@@ -153,6 +153,6 @@ Although this is possible to create the workspace containers with rover, we reco
 
 <!-- ## State locator details
 
-Rover offers you to manage state and operations on CAF Terraform landing zones. It allows you to do commands on storage accounts deployed by launchpad various levels.
+Rover offers you to manage state and operations on Azure Terraform SRE landing zones. It allows you to do commands on storage accounts deployed by launchpad various levels.
 
 We retrieve the state files using the following tags on storage accounts and Key Vault: -->

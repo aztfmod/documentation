@@ -3,7 +3,7 @@ id: provider-intro
 sidebar_position: 4
 ---
 
-# Introduction to CAF Terraform provider
+# Introduction to Azure Terraform SRE provider
 
 ## What is CAF provider?
 
@@ -15,7 +15,7 @@ The naming convention provider allows you to go faster from integration to produ
 
 ## Where to find CAF provider?
 
-The CAF Terraform provider is verified by Hashicorp and is present in the [Hashicorp Terraform registry here](https://registry.terraform.io/providers/aztfmod/azurecaf/latest) and you can contribute to it [on GitHub.](https://github.com/aztfmod/terraform-azurerm-caf)
+The Azure Terraform SRE provider is verified by Hashicorp and is present in the [Hashicorp Terraform registry here](https://registry.terraform.io/providers/aztfmod/azurecaf/latest) and you can contribute to it [on GitHub.](https://github.com/aztfmod/terraform-azurerm-caf)
 
 ## How to use the CAF provider?
 
