@@ -123,7 +123,7 @@
     "eval": "0.1.8",
     "express": "4.18.1",
     "finalhandler": "1.2.0",
-    "follow-redirects": "1.15.1",
+    "follow-redirects": "1.15.6",
     "fraction.js": "4.2.0",
     "html-tags": "3.2.0",
     "html-webpack-plugin": "5.5.0",
