@@ -1249,14 +1249,7 @@
     "@babel/helper-plugin-utils" "^7.24.6"
     "@babel/plugin-syntax-json-strings" "^7.8.3"
 
-"@babel/plugin-transform-literals@7.17.12":
-  version "7.17.12"
-  resolved "https://registry.yarnpkg.com/@babel/plugin-transform-literals/-/plugin-transform-literals-7.17.12.tgz#97131fbc6bbb261487105b4b3edbf9ebf9c830ae"
-  integrity sha512-8iRkvaTjJciWycPIZ9k9duu663FT7VrBdNqNgxnVXEFwOIp55JWcZd23VBRySYbnS3PwQ3rGiabJBBBGj5APmQ==
-  dependencies:
-    "@babel/helper-plugin-utils" "^7.17.12"
-
-"@babel/plugin-transform-literals@^7.17.12", "@babel/plugin-transform-literals@^7.24.6":
+"@babel/plugin-transform-literals@7.24.6", "@babel/plugin-transform-literals@^7.17.12", "@babel/plugin-transform-literals@^7.24.6":
   version "7.24.6"
   resolved "https://registry.yarnpkg.com/@babel/plugin-transform-literals/-/plugin-transform-literals-7.24.6.tgz#7f44f2871d7a4456030b0540858046f0b7bc6b18"
   integrity sha512-f2wHfR2HF6yMj+y+/y07+SLqnOSwRp8KYLpQKOzS58XLVlULhXbiYcygfXQxJlMbhII9+yXDwOUFLf60/TL5tw==
