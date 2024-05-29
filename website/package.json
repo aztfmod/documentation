@@ -196,7 +196,7 @@
     "type-fest": "2.14.0",
     "wait-on": "6.0.1",
     "webpack-bundle-analyzer": "4.5.0",
-    "webpack-dev-middleware": "5.3.3",
+    "webpack-dev-middleware": "5.3.4",
     "webpack-dev-server": "4.9.2",
     "widest-line": "4.0.1",
     "wrap-ansi": "8.0.1"
