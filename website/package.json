@@ -48,7 +48,7 @@
     "@babel/plugin-transform-destructuring": "7.18.0",
     "@babel/plugin-transform-duplicate-keys": "7.17.12",
     "@babel/plugin-transform-for-of": "7.18.1",
-    "@babel/plugin-transform-literals": "7.17.12",
+    "@babel/plugin-transform-literals": "7.24.6",
     "@babel/plugin-transform-modules-amd": "7.18.0",
     "@babel/plugin-transform-modules-commonjs": "7.18.2",
     "@babel/plugin-transform-modules-systemjs": "7.18.5",
