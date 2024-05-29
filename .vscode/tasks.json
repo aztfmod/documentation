@@ -1,0 +1,53 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": ">Docusaurus build",
+            "type": "shell",
+            "command": "yarn build",
+            "options": {
+                "cwd": "${workspaceFolder}/website"
+            },
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "presentation": {
+                "reveal": "always"
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": ">Docusaurus serve",
+            "type": "shell",
+            "command": "yarn serve",
+            "options": {
+                "cwd": "${workspaceFolder}/website"
+            },
+            "group": {
+                "kind": "test",
+                "isDefault": true
+            },
+            "presentation": {
+                "reveal": "always"
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": ">Docusaurus upgrade",
+            "type": "shell",
+            "command": "yarn upgrade",
+            "options": {
+                "cwd": "${workspaceFolder}/website"
+            },
+            "group": {
+                "kind": "test",
+                "isDefault": true
+            },
+            "presentation": {
+                "reveal": "always"
+            },
+            "problemMatcher": []
+        }
+    ]
+}
