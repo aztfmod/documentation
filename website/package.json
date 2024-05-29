@@ -28,7 +28,7 @@
     "@babel/core": "7.18.5",
     "@babel/plugin-bugfix-safari-id-destructuring-collision-in-function-expression": "7.17.12",
     "@babel/plugin-bugfix-v8-spread-parameters-in-optional-chaining": "7.17.12",
-    "@babel/plugin-proposal-async-generator-functions": "7.17.12",
+    "@babel/plugin-proposal-async-generator-functions": "7.20.7",
     "@babel/plugin-proposal-class-properties": "7.17.12",
     "@babel/plugin-proposal-class-static-block": "7.18.0",
     "@babel/plugin-proposal-export-namespace-from": "7.17.12",

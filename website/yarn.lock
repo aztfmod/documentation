@@ -642,16 +642,7 @@
     "@babel/helper-environment-visitor" "^7.24.6"
     "@babel/helper-plugin-utils" "^7.24.6"
 
-"@babel/plugin-proposal-async-generator-functions@7.17.12":
-  version "7.17.12"
-  resolved "https://registry.yarnpkg.com/@babel/plugin-proposal-async-generator-functions/-/plugin-proposal-async-generator-functions-7.17.12.tgz#094a417e31ce7e692d84bab06c8e2a607cbeef03"
-  integrity sha512-RWVvqD1ooLKP6IqWTA5GyFVX2isGEgC5iFxKzfYOIy/QEFdxYyCybBDtIGjipHpb9bDWHzcqGqFakf+mVmBTdQ==
-  dependencies:
-    "@babel/helper-plugin-utils" "^7.17.12"
-    "@babel/helper-remap-async-to-generator" "^7.16.8"
-    "@babel/plugin-syntax-async-generators" "^7.8.4"
-
-"@babel/plugin-proposal-async-generator-functions@^7.17.12":
+"@babel/plugin-proposal-async-generator-functions@7.20.7", "@babel/plugin-proposal-async-generator-functions@^7.17.12":
   version "7.20.7"
   resolved "https://registry.yarnpkg.com/@babel/plugin-proposal-async-generator-functions/-/plugin-proposal-async-generator-functions-7.20.7.tgz#bfb7276d2d573cb67ba379984a2334e262ba5326"
   integrity sha512-xMbiLsn/8RK7Wq7VeVytytS2L6qE69bXPB10YCmMdDZbKF4okCqY74pI/jJQ/8U0b/F6NrT2+14b8/P9/3AMGA==
