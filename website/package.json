@@ -161,7 +161,7 @@
     "postcss-normalize-string": "5.1.0",
     "postcss-normalize-timing-functions": "5.1.0",
     "postcss-normalize-unicode": "5.1.0",
-    "postcss-normalize-url": "5.1.0",
+    "postcss-normalize-url": "7.0.0",
     "postcss-normalize-whitespace": "5.1.1",
     "postcss-ordered-values": "5.1.3",
     "postcss-reduce-idents": "5.2.0",
