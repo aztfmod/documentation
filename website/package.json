@@ -83,7 +83,7 @@
     "@jridgewell/gen-mapping": "0.3.2",
     "@jridgewell/resolve-uri": "3.0.8",
     "@jridgewell/set-array": "1.1.2",
-    "@leichtgewicht/ip-codec": "2.0.4",
+    "@leichtgewicht/ip-codec": "2.0.5",
     "@mdx-js/mdx": "1.6.22",
     "@mdx-js/react": "^1.6.21",
     "@slorber/static-site-generator-webpack-plugin": "4.0.7",
