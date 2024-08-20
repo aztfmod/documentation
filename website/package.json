@@ -20,7 +20,7 @@
     "@algolia/cache-in-memory": "4.13.1",
     "@algolia/client-account": "4.13.1",
     "@algolia/client-analytics": "4.13.1",
-    "@algolia/client-personalization": "4.13.1",
+    "@algolia/client-personalization": "5.0.2",
     "@algolia/logger-console": "4.13.1",
     "@algolia/requester-browser-xhr": "4.13.1",
     "@algolia/requester-node-http": "4.13.1",
