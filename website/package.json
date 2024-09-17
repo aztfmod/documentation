@@ -186,7 +186,7 @@
     "rtlcss": "3.5.0",
     "rxjs": "7.5.5",
     "selfsigned": "2.0.1",
-    "serve-static": "1.15.0",
+    "serve-static": "1.16.2",
     "shallowequal": "1.1.0",
     "side-channel": "1.0.4",
     "sitemap": "7.1.1",
