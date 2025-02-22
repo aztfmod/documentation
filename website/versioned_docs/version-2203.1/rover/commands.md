@@ -111,7 +111,7 @@ rover \
   -level level3 \
   -w data-landing-zone-prod `\
   -p ${TF_DATA_DIR}/data-landing-zone_prod_level3.tfstate.tfplan \
-  -a untaint "module.solution.module.storage_containers[\"storageWorkspace_di001\"].azurerm_storage_container.stg" 
+  -a untaint 'module.solution.module.storage_containers["storageWorkspace_di001"].azurerm_storage_container.stg' 
   ```
 
 When executed the rover will display a similar output.
