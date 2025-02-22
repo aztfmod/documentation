@@ -118,7 +118,7 @@
     "cssnano-preset-advanced": "5.3.8",
     "del": "6.1.1",
     "dns-packet": "5.4.0",
-    "eastasianwidth": "0.2.0",
+    "eastasianwidth": "0.3.0",
     "enhanced-resolve": "5.9.3",
     "eval": "0.1.8",
     "express": "4.19.2",
