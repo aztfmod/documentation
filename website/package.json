@@ -108,7 +108,7 @@
     "cli-boxes": "3.0.0",
     "cli-table3": "0.6.2",
     "clsx": "^1.1.1",
-    "cookie": "0.7.0",
+    "cookie": "1.0.2",
     "copy-webpack-plugin": "11.0.0",
     "core-js": "3.23.3",
     "css-declaration-sorter": "6.3.0",
