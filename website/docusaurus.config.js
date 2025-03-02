@@ -1,9 +1,6 @@
 // @ts-check
 // Note: type annotations allow type checking and IDEs autocompletion
 
-const lightCodeTheme = require('prism-react-renderer/themes/github');
-const darkCodeTheme = require('prism-react-renderer/themes/dracula');
-
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: 'Azure Terraform SRE',
@@ -15,7 +12,6 @@ const config = {
   favicon: 'img/landingzones.ico',
   organizationName: 'aztfmod', // Usually your GitHub org/user name.
   projectName: 'documentation', // Usually your repo name.
-
   presets: [
     [
       'classic',
@@ -45,10 +41,20 @@ const config = {
       }),
     ],
   ],
-
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
+      // Updated: Replaced themes from prism-react-renderer with new syntax for v3
+      prism: {
+        theme: {
+          plain: {},
+          styles: []
+        },
+        darkTheme: {
+          plain: {},
+          styles: []
+        },
+      },
       navbar: {
         title: 'Azure Terraform SRE',
         logo: {
@@ -145,11 +151,7 @@ const config = {
         ],
         copyright: `Copyright © ${new Date().getFullYear()} Azure Terraform SRE`,
       },
-      prism: {
-        theme: darkCodeTheme,
-        darkTheme: darkCodeTheme,
-      },
-    })
+    }),
 };
 
 module.exports = config;
