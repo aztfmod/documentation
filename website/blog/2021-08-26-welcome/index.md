@@ -9,6 +9,8 @@ tags: [facebook, hello, docusaurus]
 
 Simply add Markdown files (or folders) to the `blog` directory.
 
+<!-- truncate -->
+
 Regular blog authors can be added to `authors.yml`.
 
 The blog post date can be extracted from filenames, such as:

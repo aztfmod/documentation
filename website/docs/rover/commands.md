@@ -51,7 +51,7 @@ rover \
  -launchpad \
  -env contoso \
  -level level0 \
- -p ${TF_DATA_DIR}/caf_launchpad.tfstate.tfplan \
+ -p "$TF_DATA_DIR/caf_launchpad.tfstate.tfplan" \
  -a plan
 ```
 
@@ -68,13 +68,39 @@ The following table summarizes the most common parameters and their default valu
 | -tfstate_subscription_id          | no       | If no value specified, rover is assuming the currently logged-in subscription from az cli context. | GUID of the subscription containing the tfstate (launchpad). This will be used to locate and store the tfstate files.                                                                                                                                                                         | ```a-b-c-d-e  ```                                                      |
 | -target_subscription              | no       | If no value specified, rover is assuming the currently logged-in subscription from az cli context. | GUID of the subscription where to deploy the resources.                                                                                                                                                                                                                                       | ```a-b-c-d-e```                                                        |
 | -workspace                        | no       | ```tfstate```                                                                                      | Specifies the storage account container where to store the tfstate for this landing zone. This could be used to isolate landing zones from each others by specifying Azure AD RBAC entries on the specific container withing the storage account.                                             | ```my_container```                                                     |
-| -p                                | no       | N/A                                                                                                | Specifies the location where to store the plan file, if not specified a plan file will be automatically created for you when you specify ```-a apply ``` and will be stored ```in ${TF_DATA_DIR}```                                                                                           | ${TF_DATA_DIR}/caf_launchpad.tfstate.tfplan                            |
+| -p                                | no       | N/A                                                                                                | Specifies the location where to store the plan file, if not specified a plan file will be automatically created for you when you specify ```-a apply ``` and will be stored in the TF_DATA_DIR directory                                                                                         | ```"$TF_DATA_DIR/caf_launchpad.tfstate.tfplan"```                            |
 | -launchpad                        | no       | N/A                                                                                                | Flag that indicates that the current deployment is a launchpad.                                                                                                                                                                                                                               | ```-launchpad ```                                                      |
 | -tfc                              | no       | N/A                                                                                                | Flag that indicates that the current deployment will use the TFC configured settings to store the state (refer to the Use TFC section of this guide)                                                                                                                                          | ```-tfc ```                                                            |
-| -skip-permission-check            | no       | N/A                                                                                                | Flag to skip the check that the currently logged-in principal is owner of the target subscription (only checked for launchpad)                                                                                                                                            | ```-skip-permission-check ```                                          |
+| -skip-permission-check            | no       | N/A                                                                                                | Flag to skip the check that the currently logged-in principal is owner of the target subscription (only checked for launchpad)                                                                                                                                                            | ```-skip-permission-check ```                                          |
 | -impersonate-sp-from-keyvault-url | no       | N/A                                                                                                | Flag that indicates rover to use impersonate the Service Principal and use the credentials stored in the Azure Key Vault which URL is specified as parameter. Requires launchpad_credentials landing zone to be setup (more details to be published soon.)                                    | ```-impersonate-sp-from-keyvault-url https://myakv.vault.azure.net/```|
 | init | no       | N/A                                                                                                | Initialize developer remote state management in azurerm                               | ```init -env name -location southeastasia```|
 | init --clean | no       | N/A                                                                                                | Delete the initialized remote state management in azurerm                               | ```init --clean -env name -location southeastasia ``` |
+
+## Examples of using the -p parameter
+
+### Planning with a specific plan file
+```bash
+rover \
+  -lz /tf/caf/landingzones/caf_launchpad \
+  -var-folder /tf/caf/configuration/contoso/platform/level0/launchpad \
+  -tfstate caf_launchpad.tfstate \
+  -env contoso \
+  -level level0 \
+  -p "$TF_DATA_DIR/my_custom_plan.tfplan" \
+  -a plan
+```
+
+### Applying a previously created plan file
+```bash
+rover \
+  -lz /tf/caf/landingzones/caf_launchpad \
+  -var-folder /tf/caf/configuration/contoso/platform/level0/launchpad \
+  -tfstate caf_launchpad.tfstate \
+  -env contoso \
+  -level level0 \
+  -p "$TF_DATA_DIR/my_custom_plan.tfplan" \
+  -a apply
+```
 
 ## Examples
 
@@ -113,7 +139,7 @@ rover \
   -env contoso \
   -level level3 \
   -w data-landing-zone-prod `\
-  -p ${TF_DATA_DIR}/data-landing-zone_prod_level3.tfstate.tfplan \
+  -p "$TF_DATA_DIR/data-landing-zone_prod_level3.tfstate.tfplan" \
   -a untaint "module.solution.module.storage_containers[\"storageWorkspace_di001\"].azurerm_storage_container.stg" 
   ```
 
