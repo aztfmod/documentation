@@ -173,7 +173,7 @@
     "postcss-unique-selectors": "5.1.1",
     "postcss-zindex": "5.1.0",
     "prism-react-renderer": "^1.2.1",
-    "prismjs": "1.28.0",
+    "prismjs": "1.30.0",
     "raw-body": "2.5.1",
     "react": "^17.0.1",
     "react-dev-utils": "12.0.1",
