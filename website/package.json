@@ -65,7 +65,7 @@
     "@babel/preset-env": "7.18.2",
     "@babel/preset-react": "7.17.12",
     "@babel/preset-typescript": "7.17.12",
-    "@babel/runtime-corejs3": "7.18.3",
+    "@babel/runtime-corejs3": "7.27.0",
     "@colors/colors": "1.5.0",
     "@docsearch/css": "3.1.0",
     "@docsearch/react": "3.1.0",
